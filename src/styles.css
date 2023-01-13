@@ -8,6 +8,6 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-image: url(assets/DSC_0074-hdr.jpg);
-    background-size: cover;
+    background-image: url(assets/stormysky.jpg);
+    background-repeat: repeat;
 }

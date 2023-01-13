@@ -1,12 +1,15 @@
-<div class="title">
-    <h1>Footeware</h1>
-</div>
-
-<div class="nav">
-    <div class="inner-nav">
-        <a href="/home">Home</a>
+<mat-sidenav-container hasBackdrop="true">
+    <mat-sidenav #sidenav mode="over">
         <a href="/galleries">Galleries</a>
         <a href="/gear">Gear</a>
         <a href="http://footeware.ca:8070/recipes">Recipes</a>
-    </div>
-</div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="paper">
+            <div class="padded-top">
+                <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+                <div class="title">Footeware</div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
