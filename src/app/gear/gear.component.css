@@ -1,0 +1,25 @@
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.paper-title {
+    background-image: url(../../assets/paper-title.svg);
+    background-size: cover;
+    width: 300px;
+    height: 135px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    padding-top: 0;
+    border: 1px solid transparent;
+}
+
+.title {
+    font-family: "drawing";
+    font-size: 2.8em;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}

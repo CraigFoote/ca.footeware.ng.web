@@ -1,13 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+    font-family: "drawing";
+    src: url(assets/drawing.ttf) format("truetype");
+}
+
 html,
 body {
     height: 100%;
+    width: 100%;
 }
 
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-image: url(assets/stormysky.jpg);
-    background-repeat: repeat;
+    background-image: url(assets/DSC_0074-hdr.jpg);
+    background-size: cover;
 }
