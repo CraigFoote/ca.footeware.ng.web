@@ -26,27 +26,12 @@
     margin-bottom: 10px;
 }
 
-dl {
-    font-family: "drawing";
-    font-size: 1.5em;
-    color: darkblue;
-    text-align: left;
-    padding: 70px;
-    background-image: url(../../assets/paper-content.svg);
-    background-size: cover;
-}
-
-dt,
-dd {
-    line-height: 30px;
-}
-
-dd a {
-    text-decoration: none;
-}
-
 .container {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+}
+
+img {
+    width: 50%;
 }

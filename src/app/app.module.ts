@@ -8,11 +8,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { GearComponent } from './gear/gear.component';
+import { WebcamComponent } from './webcam/webcam.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GearComponent
+    GearComponent,
+    WebcamComponent
   ],
   imports: [
     BrowserModule,
