@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 @font-face {
-    font-family: "drawing";
-    src: url(assets/drawing.ttf) format("truetype");
+    font-family: "skyline";
+    src: url(assets/skyline.ttf) format("truetype");
 }
 
 html,

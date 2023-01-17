@@ -18,17 +18,16 @@
 }
 
 .title {
-    font-family: "drawing";
+    font-family: "skyline";
     color: darkblue;
-    font-size: 2.8em;
-    font-weight: bolder;
+    font-size: 4.8em;
     margin-top: 50px;
     margin-bottom: 10px;
 }
 
 dl {
-    font-family: "drawing";
-    font-size: 1.5em;
+    font-family: "skyline";
+    font-size: 4em;
     color: darkblue;
     text-align: left;
     padding: 70px;
@@ -38,7 +37,7 @@ dl {
 
 dt,
 dd {
-    line-height: 30px;
+    line-height: 40px;
 }
 
 dd a {

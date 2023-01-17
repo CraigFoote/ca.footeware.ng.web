@@ -9,12 +9,14 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { GearComponent } from './gear/gear.component';
 import { WebcamComponent } from './webcam/webcam.component';
+import { GalleriesComponent } from './galleries/galleries.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GearComponent,
-    WebcamComponent
+    WebcamComponent,
+    GalleriesComponent
   ],
   imports: [
     BrowserModule,

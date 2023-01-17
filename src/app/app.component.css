@@ -17,13 +17,13 @@ mat-sidenav {
     top: 0;
     width: 241px;
     height: 335px;
-    font-family: "drawing";
+    font-family: "skyline";
     text-align: center;
     padding-top: 30px;
 }
 
 mat-sidenav a {
-    font-size: 3em;
+    font-size: 5em;
     display: block;
     padding: 20px 0 20px 0;
     text-decoration: none;
@@ -45,10 +45,9 @@ mat-sidenav-content {
 }
 
 .title {
-    font-family: "drawing";
+    font-family: "skyline";
     color: darkblue;
-    font-size: 2.8em;
-    font-weight: bolder;
+    font-size: 4.8em;
     margin-top: 50px;
     margin-bottom: 10px;
 }
