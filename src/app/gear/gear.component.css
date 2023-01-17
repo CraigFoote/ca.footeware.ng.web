@@ -27,17 +27,17 @@
 
 dl {
     font-family: "skyline";
-    font-size: 4em;
+    font-size: 3em;
     color: darkblue;
     text-align: left;
-    padding: 70px;
+    padding: 80px;
     background-image: url(../../assets/paper-content.svg);
     background-size: cover;
 }
 
 dt,
 dd {
-    line-height: 40px;
+    line-height: 38px;
 }
 
 dd a {
