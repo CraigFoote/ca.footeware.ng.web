@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
 import { GearComponent } from './gear/gear.component';
 import { WebcamComponent } from './webcam/webcam.component';
 import { GalleriesComponent } from './galleries/galleries.component';
@@ -24,7 +25,8 @@ import { GalleriesComponent } from './galleries/galleries.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

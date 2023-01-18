@@ -13,7 +13,24 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
     background-image: url(assets/DSC_0074-hdr.jpg);
     background-size: cover;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    background-color: aliceblue;
+    margin: 10px auto 10px auto;
+    width: max-content;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
 }

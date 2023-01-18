@@ -6,11 +6,13 @@
         <a href="http://footeware.ca:8070/recipes">Recipes</a>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div class="paper-title">
-            <div class="title">Footeware</div>
+        <div class="container">
+            <h1>Footeware</h1>
             <button class="padded animate__animated animate__bounceInDown" mat-mini-fab color="primary"
                 (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
         </div>
+
         <router-outlet></router-outlet>
+
     </mat-sidenav-content>
 </mat-sidenav-container>

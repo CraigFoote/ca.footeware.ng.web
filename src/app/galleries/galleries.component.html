@@ -1,11 +1,11 @@
 <div class="center">
-    <div class="paper-title">
-        <h1 class="title">Galleries</h1>
+    <div class="container">
+        <h1>Galleries</h1>
     </div>
     <div class="container">
-        <ul class="content">
-            <li>Artsy Fartsy</li>
-            <li>Family</li>
+        <ul>
+            <li *ngFor="let gallery of galleries"><a [routerLink]="'/galleries/' + gallery.name">{{gallery.name}}</a>
+            </li>
         </ul>
     </div>
 </div>

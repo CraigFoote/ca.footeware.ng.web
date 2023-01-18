@@ -1,36 +1,9 @@
-.center {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.paper-title {
-    background-image: url(../../assets/paper-title.svg);
-    background-size: cover;
-    width: 300px;
-    height: 135px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0;
-    margin-bottom: 30px;
-    padding-top: 0;
-    border: 1px solid transparent;
-}
-
-.title {
-    font-family: "skyline";
-    color: darkblue;
-    font-size: 4.8em;
-    margin-top: 50px;
-    margin-bottom: 10px;
-}
-
-.container {
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 img {
     width: 50%;
+}
+
+h1 {
+    font-family: "skyline";
+    color: blue;
+    font-size: 4.8em;
 }
