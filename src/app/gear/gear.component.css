@@ -8,8 +8,11 @@ h1 {
 dl {
     font-family: "skyline";
     font-size: 3em;
-    color: darkblue;
+    color: blue;
     text-align: left;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 dt,
@@ -23,4 +26,5 @@ dd a {
 
 img{
     margin: 10px;
+    border-radius: 5px;
 }

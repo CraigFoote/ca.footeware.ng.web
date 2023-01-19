@@ -13,4 +13,9 @@ export class ImageService {
     const headers = { 'Access-Control-Allow-Origin': '*' };
     return this.http.get<any>('http://localhost:8000/galleries', { headers });
   }
+
+  getThumbnails(gallery: string): Observable<any> {
+    const headers = { 'Access-Control-Allow-Origin': '*' };
+    return this.http.get<any>('http://localhost:8000/galleries/' + gallery, { headers });
+  }
 }
