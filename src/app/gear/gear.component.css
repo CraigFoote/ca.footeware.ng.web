@@ -1,14 +1,12 @@
 h1 {
-    font-family: "skyline";
-    color: blue;
-    font-size: 4.8em;
+    font-family: "choice";
+    font-size: 3em;
     margin: 20px;
 }
 
 dl {
-    font-family: "skyline";
-    font-size: 3em;
-    color: blue;
+    font-family: "decker";
+    font-size: 2em;
     text-align: left;
     width: fit-content;
     margin-left: auto;

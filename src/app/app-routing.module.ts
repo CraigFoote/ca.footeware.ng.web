@@ -7,7 +7,8 @@ import { GalleriesComponent } from './galleries/galleries.component';
 const routes: Routes = [
   { path: "gear", component: GearComponent },
   { path: "webcam", component: WebcamComponent },
-  { path: "galleries", component: GalleriesComponent }
+  { path: "galleries", component: GalleriesComponent },
+  { path: "galleries/:gallery-name", component: GalleriesComponent }
 ];
 
 @NgModule({

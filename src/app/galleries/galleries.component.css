@@ -1,16 +1,32 @@
 h1 {
-    font-family: "skyline";
-    color: blue;
-    font-size: 4.8em;
+    font-family: "choice";
+    font-size: 3em;
 }
 
 ul {
-    font-family: "skyline";
-    font-size: 4.4em;
-    line-height: 1em;
-    color: blue;
     text-align: left;
-    list-style-type: none;
     padding-right: 30px;
     margin: 0;
+}
+
+li {
+    font-family: "decker";
+    letter-spacing: 1px;
+    font-size: 2.5em;
+    line-height: 1.5em;
+    list-style-image: url(../../assets/aperture-open.svg);
+}
+
+a {
+    padding: 10px;
+    color: black;
+    border: 1px solid transparent;
+}
+
+a:hover {
+    color: blue;
+}
+
+.selected {
+    list-style-image: url(../../assets/aperture-closed.svg);
 }

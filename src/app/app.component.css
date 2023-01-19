@@ -15,8 +15,6 @@ mat-sidenav {
     top: 0;
     width: 240px;
     height: 330px;
-    font-family: "skyline";
-    color: blue;
     text-align: center;
     padding-top: 30px;
     margin: 20px;
@@ -24,26 +22,23 @@ mat-sidenav {
 }
 
 mat-sidenav a {
-    font-size: 5em;
+    font-size: 3em;
+    font-family: "choice";
+    color: black;
     display: block;
     padding: 20px 0 20px 0;
     text-decoration: none;
+}
+
+mat-sidenav a:hover {
+    color: blue;
 }
 
 mat-sidenav-content {
     text-align: center;
 }
 
-.title {
-    font-family: "skyline";
-    color: blue;
-    font-size: 4.8em;
-    margin-top: 50px;
-    margin-bottom: 10px;
-}
-
 h1 {
-    font-family: "skyline";
-    color: blue;
-    font-size: 4.8em;
+    font-family: "choice";
+    font-size: 3.5em;
 }

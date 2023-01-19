@@ -4,7 +4,8 @@
     </div>
     <div class="container">
         <ul>
-            <li *ngFor="let gallery of galleries"><a [routerLink]="'/galleries/' + gallery.name">{{gallery.name}}</a>
+            <li *ngFor="let gallery of galleries" [ngClass]="galleryName == gallery.name ? 'selected' : ''">
+                <a [routerLink]="'/galleries/' + gallery.name">{{gallery.name}}</a>
             </li>
         </ul>
     </div>

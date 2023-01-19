@@ -1,8 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 @font-face {
-    font-family: "skyline";
-    src: url(assets/skyline.ttf) format("truetype");
+    font-family: "choice";
+    src: url(assets/choice.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "decker";
+    src: url(assets/decker.ttf) format("truetype");
 }
 
 html,
@@ -31,7 +36,6 @@ body {
     padding: 20px;
     border-radius: 10px;
 }
-
 a {
     text-decoration: none;
 }
