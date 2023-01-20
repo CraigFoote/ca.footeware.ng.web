@@ -1,5 +1,5 @@
 export class Thumbnail {
 
-    constructor(public fileName: string, public exif: string) {
+    constructor(public filename: string, public exif: string, public image: string) {
     }
 }

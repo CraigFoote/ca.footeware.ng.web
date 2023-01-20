@@ -14,8 +14,13 @@ export class ImageService {
     return this.http.get<any>('http://localhost:8000/galleries', { headers });
   }
 
-  getThumbnails(gallery: string): Observable<any> {
+  getGallery(gallery: string): Observable<any> {
     const headers = { 'Access-Control-Allow-Origin': '*' };
     return this.http.get<any>('http://localhost:8000/galleries/' + gallery, { headers });
+  }
+
+  getImage(gallery: string, filename: string): Observable<any> {
+    const headers = { 'Access-Control-Allow-Origin': '*' };
+    return this.http.get<any>('http://localhost:8000/galleries/' + gallery + "/" + filename, { headers });
   }
 }

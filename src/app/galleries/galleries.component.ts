@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
 import { Gallery } from '../models/gallery';
 import { Thumbnail } from '../models/thumbnail';
 import { ImageService } from "../services/image.service";
@@ -49,13 +50,9 @@ export class GalleriesComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe(params => {
       if (params['gallery-name'] != undefined) {
         this.galleryName = params['gallery-name'];
-        this.imageService.getThumbnails(this.galleryName).subscribe({
+        this.imageService.getGallery(this.galleryName).subscribe({
           next: data => {
-            // console.log(data);
-            this.thumbnails = Object.keys(data).map((key) => {
-              return new Thumbnail(key, data[key]);
-             })
-            // console.log(this.thumbnails[0]);
+            this.thumbnails = data;
             this.loading = false;
           },
           error: error => {
