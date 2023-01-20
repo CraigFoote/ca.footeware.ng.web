@@ -10,7 +10,8 @@
             </li>
         </ul>
     </div>
-    <div class="container" style="margin: 25px;" *ngIf="!loading">
+    <img *ngIf="loading" src="../../assets/loading.gif" alt="loading..." />
+    <div *ngIf="!loading" class="container" style="margin: 25px;">
         <div *ngFor="let tn of thumbnails" style="display: inline-block; margin: 10px;">
             <img [src]="'data:image/jpeg;charset=utf-8;base64,' + tn.image" alt="image" [title]="tn.exif" />
         </div>
