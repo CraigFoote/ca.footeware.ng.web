@@ -12,7 +12,8 @@ import { ImageService } from "../services/image.service";
 export class GalleriesComponent implements OnInit, OnDestroy {
 
   galleries!: Gallery[];
-  loading: boolean = false;
+  loadingGalleries: boolean = false;
+  loadingGallery: boolean = false;
   private sub: any;
   galleryName!: string;
   thumbnails!: Thumbnail[];
@@ -20,8 +21,8 @@ export class GalleriesComponent implements OnInit, OnDestroy {
   constructor(private imageService: ImageService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.subscribeToGallerySelection();
     this.getGalleries();
-    this.getSelectedGallery();
   }
 
   ngOnDestroy(): void {
@@ -29,34 +30,33 @@ export class GalleriesComponent implements OnInit, OnDestroy {
   }
 
   getGalleries() {
-    // wait for response
-    this.loading = true;
+    this.loadingGalleries = true;
     this.imageService.getAllGalleries().subscribe({
       next: data => {
         this.galleries = data;
-        this.loading = false;
+        this.loadingGalleries = false;
       },
       error: error => {
         console.error('There was an error!', error.message);
-        this.loading = false;
+        this.loadingGalleries = false;
         alert(error.message);
       }
     });
   }
 
-  getSelectedGallery() {
+  subscribeToGallerySelection() {
     this.sub = this.route.params.subscribe(params => {
       if (params['gallery-name'] != undefined) {
-        this.loading = true;
+        this.loadingGallery = true;
         this.galleryName = params['gallery-name'];
         this.imageService.getGallery(this.galleryName).subscribe({
           next: data => {
             this.thumbnails = data;
-            this.loading = false;
+            this.loadingGallery = false;
           },
           error: error => {
             console.error('There was an error!', error.message);
-            this.loading = false;
+            this.loadingGallery = false;
             alert(error.message);
           }
         });
