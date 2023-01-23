@@ -10,7 +10,10 @@
                     [routerLink]="'/login/' + gallery.name">{{gallery.name}}</a>
                 <a *ngIf="gallery.secret && authService.authenticated"
                     [routerLink]="'/galleries/' + gallery.name">{{gallery.name}}</a>
-                <img *ngIf="gallery.secret" src="../../assets/lock.svg" alt="locked" />
+                <img *ngIf="gallery.secret && !authService.authenticated" src="../../assets/lock-closed.svg"
+                    alt="locked" />
+                <img *ngIf="gallery.secret && authService.authenticated" src="../../assets/lock-open.svg"
+                    alt="locked" />
             </li>
         </ul>
     </div>
