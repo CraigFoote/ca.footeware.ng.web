@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Gallery } from '../models/gallery';
 import { Thumbnail } from '../models/thumbnail';
+import { AuthService } from '../services/auth.service';
 import { ImageService } from "../services/image.service";
 
 @Component({
@@ -11,18 +12,21 @@ import { ImageService } from "../services/image.service";
 })
 export class GalleriesComponent implements OnInit, OnDestroy {
 
-  galleries!: Gallery[];
+  galleries: Gallery[] = [];
   loadingGalleries: boolean = false;
   loadingGallery: boolean = false;
   private sub: any;
   galleryName!: string;
   thumbnails!: Thumbnail[];
 
-  constructor(private imageService: ImageService, private route: ActivatedRoute) { }
+  constructor(private imageService: ImageService,
+    private route: ActivatedRoute,
+    private router: Router,
+    public authService: AuthService) { }
 
   ngOnInit(): void {
-    this.subscribeToGallerySelection();
     this.getGalleries();
+    this.subscribeToGallerySelection();
   }
 
   ngOnDestroy(): void {
@@ -48,7 +52,10 @@ export class GalleriesComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe(params => {
       if (params['gallery-name'] != undefined) {
         this.loadingGallery = true;
-        this.galleryName = params['gallery-name'];
+        this.galleryName = params["gallery-name"];
+        if (this.galleryIsSecret() && !this.authService.authenticated) {
+          this.router.navigate(["/login?${galleryName}"]);
+        }
         this.imageService.getGallery(this.galleryName).subscribe({
           next: data => {
             this.thumbnails = data;
@@ -62,5 +69,15 @@ export class GalleriesComponent implements OnInit, OnDestroy {
         });
       }
     });
+  }
+
+  galleryIsSecret(): boolean {
+    let secret = false;
+    this.galleries.forEach(gallery => {
+      if (this.galleryName == gallery.name) {
+        secret = gallery.secret;
+      }
+    });
+    return secret;
   }
 }

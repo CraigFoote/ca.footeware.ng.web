@@ -3,9 +3,13 @@
         <h1>Galleries</h1>
     </div>
     <div *ngIf="!loadingGalleries" class="container">
-        <ul>
+        <ul class="animate__animated animate__fadeIn">
             <li *ngFor="let gallery of galleries" [ngClass]="galleryName == gallery.name ? 'selected' : ''">
-                <a [routerLink]="'/galleries/' + gallery.name">{{gallery.name}}</a>
+                <a *ngIf="!gallery.secret" [routerLink]="'/galleries/' + gallery.name">{{gallery.name}}</a>
+                <a *ngIf="gallery.secret && !authService.authenticated"
+                    [routerLink]="'/login/' + gallery.name">{{gallery.name}}</a>
+                <a *ngIf="gallery.secret && authService.authenticated"
+                    [routerLink]="'/galleries/' + gallery.name">{{gallery.name}}</a>
                 <img *ngIf="gallery.secret" src="../../assets/lock.svg" alt="locked" />
             </li>
         </ul>
