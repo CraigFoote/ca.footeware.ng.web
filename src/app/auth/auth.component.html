@@ -10,7 +10,9 @@
             </mat-form-field>
             <mat-form-field appearance="fill" style="width: 100%;">
                 <mat-label>Password</mat-label>
-                <input name="passwordInput" type="password" [(ngModel)]="p" matInput maxlength="25" required="required"  />
+                <input name="passwordInput" type="password" [(ngModel)]="p" matInput maxlength="25" required="required"
+                    [type]="hide ? 'password' : 'text'" />
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
             <input type="submit" class="btn btn-primary mt-3" value="Submit" />&nbsp;
             <span style="font-size: 20px;">{{ error }}</span>

@@ -14,6 +14,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   error!: string;
   private sub: any;
   private forwardTo!: string;
+  hide: boolean = true;
 
   constructor(private authService: AuthService,
     private route: ActivatedRoute,
