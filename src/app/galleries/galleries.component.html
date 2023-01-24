@@ -20,8 +20,8 @@
     <img *ngIf="loadingGalleries || loadingGallery" src="../../assets/loading.gif" alt="loading..." />
     <div *ngIf="!loadingGallery" class="container" style="margin: 25px;">
         <div *ngFor="let tn of thumbnails" style="display: inline-block; margin: 10px;">
-            <a [href]="'data:image/jpeg;charset=utf-8;base64,' + tn.image" data-fancybox="gallery">
-                <img [src]="'data:image/jpeg;charset=utf-8;base64,' + tn.thumb" [alt]="tn.filename"
+            <a [href]="'http://footeware.ca:8000/galleries/' + galleryName + '/' + tn.filename" type="image/webp" data-fancybox="gallery">
+                <img [src]="'data:image/webp;charset=utf-8;base64,' + tn.thumb" [alt]="tn.filename"
                     [title]="tn.filename" />
             </a>
         </div>
