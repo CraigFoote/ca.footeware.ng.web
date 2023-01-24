@@ -11,16 +11,17 @@
                 <a *ngIf="gallery.secret && authService.authenticated"
                     [routerLink]="'/galleries/' + gallery.name">{{gallery.name}}</a>
                 <img *ngIf="gallery.secret && !authService.authenticated" src="../../assets/lock-closed.svg"
-                    alt="locked" />
+                    alt="(locked)" />
                 <img *ngIf="gallery.secret && authService.authenticated" src="../../assets/lock-open.svg"
-                    alt="locked" />
+                    alt="(open)" />
             </li>
         </ul>
     </div>
     <img *ngIf="loadingGalleries || loadingGallery" src="../../assets/loading.gif" alt="loading..." />
     <div *ngIf="!loadingGallery" class="container" style="margin: 25px;">
         <div *ngFor="let tn of thumbnails" style="display: inline-block; margin: 10px;">
-            <a [href]="'http://footeware.ca:8000/galleries/' + galleryName + '/' + tn.filename" type="image/webp" data-fancybox="gallery">
+            <a [href]="'http://footeware.ca:8000/galleries/' + galleryName + '/' + tn.filename" type="image/webp"
+                data-fancybox="gallery">
                 <img [src]="'data:image/webp;charset=utf-8;base64,' + tn.thumb" [alt]="tn.filename"
                     [title]="tn.filename" />
             </a>
