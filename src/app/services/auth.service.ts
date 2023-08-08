@@ -5,19 +5,18 @@ import { Router } from "@angular/router";
     providedIn: "root",
 })
 export class AuthService {
-    private u: string = "foote";
-    private p: string = "bogie97";
+    private p: string = "bogie";
     authenticated: boolean = false;
 
     constructor(private router: Router) { }
 
     authenticate(u: string, p: string): string {
-        if (u == this.u && p == this.p) {
+        if (p == this.p) {
             this.authenticated = true;
             return "";
         } else {
             this.authenticated = false;
-            return "Wrong username or password";
+            return "Wrong password";
         }
     }
 }
