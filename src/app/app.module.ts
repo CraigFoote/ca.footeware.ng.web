@@ -21,7 +21,7 @@ import { WebcamComponent } from './webcam/webcam.component';
     GearComponent,
     WebcamComponent,
     GalleriesComponent,
-    AuthComponent
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +33,7 @@ import { WebcamComponent } from './webcam/webcam.component';
     HttpClientModule,
     MatFormFieldModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

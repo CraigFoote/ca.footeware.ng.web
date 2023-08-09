@@ -9,9 +9,8 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit, OnDestroy {
-  u: string = "";
   p: string = "";
-  error!: string;
+  message!: string;
   private sub: any;
   private forwardTo!: string;
   hide: boolean = true;
@@ -21,14 +20,14 @@ export class AuthComponent implements OnInit, OnDestroy {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.subscribeToSecretSelection();
+    this.subscribeToGallerySelection();
   }
 
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
 
-  subscribeToSecretSelection() {
+  subscribeToGallerySelection() {
     this.sub = this.route.params.subscribe(params => {
       if (params['gallery-name'] != undefined) {
         this.forwardTo = params['gallery-name'];
@@ -36,11 +35,9 @@ export class AuthComponent implements OnInit, OnDestroy {
     });
   }
 
-  authenticate(form: NgForm) {
-    this.u = form.value.nameInput;
-    this.p = form.value.passwordInput;
-    this.error = this.authService.authenticate(this.u, this.p);
-    if (this.error.length == 0) {
+  authenticate() {
+    this.message = this.authService.authenticate(this.p);
+    if (this.message.length == 0) {
       this.router.navigate(['/galleries/' + this.forwardTo]);
     }
   }

@@ -10,8 +10,8 @@ export class AuthService {
 
     constructor(private router: Router) { }
 
-    authenticate(u: string, p: string): string {
-        if (p == this.p) {
+    authenticate(p: string): string {
+        if (p.toLowerCase() == this.p) {
             this.authenticated = true;
             return "";
         } else {

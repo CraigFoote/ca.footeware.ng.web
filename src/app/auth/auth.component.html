@@ -1,17 +1,15 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 <div class="container center">
-    <h1 class="purple decker">Log In</h1>
-    <div class="left">
-        <form #editForm=ngForm (submit)="authenticate(this.editForm)">
-            <mat-form-field appearance="fill" style="width: 100%;">
+    <h1 class="decker">Log In</h1>
+    <div class="center">
+        <form #loginForm=ngForm (submit)="authenticate()">
+            <mat-form-field appearance="fill" class="full-width">
                 <mat-label>Password</mat-label>
-                <input name="passwordInput" type="password" [(ngModel)]="p" matInput maxlength="5" required="required"
+                <input name="passwordInput" [(ngModel)]="p" matInput maxlength="5"
                     [type]="hide ? 'password' : 'text'" />
-                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
             </mat-form-field>
-            <input type="submit" class="btn btn-primary mt-3" value="Submit" />&nbsp;
-            <span style="font-size: 20px;">{{ error }}</span>
+            <input type="submit" class="larger" value="Submit" />&nbsp;
+            <span class="larger">{{ message }}</span>
         </form>
     </div>
 </div>
