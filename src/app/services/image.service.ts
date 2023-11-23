@@ -7,20 +7,22 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ImageService {
 
+  private host: string = 'http://192.168.2.101:8000/galleries';
+  
   constructor(private http: HttpClient) { }
 
   getAllGalleries(): Observable<any> {
     const headers = { 'Access-Control-Allow-Origin': '*' };
-    return this.http.get<any>('http://footeware.ca:8000/galleries', { headers });
+    return this.http.get<any>(this.host, { headers });
   }
 
   getGallery(gallery: string): Observable<any> {
     const headers = { 'Access-Control-Allow-Origin': '*' };
-    return this.http.get<any>('http://footeware.ca:8000/galleries/' + gallery, { headers });
+    return this.http.get<any>(this.host + '/' + gallery, { headers });
   }
 
   getImage(gallery: string, filename: string): Observable<any> {
     const headers = { 'Access-Control-Allow-Origin': '*' };
-    return this.http.get<any>('http://footeware.ca:8000/galleries/' + gallery + "/" + filename, { headers });
+    return this.http.get<any>(this.host + '/' + gallery + "/" + filename, { headers });
   }
 }
