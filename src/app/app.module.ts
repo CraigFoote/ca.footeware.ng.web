@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,27 +15,20 @@ import { GalleriesComponent } from './galleries/galleries.component';
 import { GearComponent } from './gear/gear.component';
 import { WebcamComponent } from './webcam/webcam.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    GearComponent,
-    WebcamComponent,
-    GalleriesComponent,
-    AuthComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatButtonModule,
-    HttpClientModule,
-    MatFormFieldModule,
-    FormsModule,
-    MatInputModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        GearComponent,
+        WebcamComponent,
+        GalleriesComponent,
+        AuthComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        FormsModule,
+        MatInputModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
