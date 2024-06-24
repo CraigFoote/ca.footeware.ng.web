@@ -5,13 +5,13 @@ import { Router } from "@angular/router";
     providedIn: "root",
 })
 export class AuthService {
-    private password: string = "bogie";
+    private p: string = "bogie";
     authenticated: boolean = false;
 
     constructor(private router: Router) { }
 
     authenticate(p: string): string {
-        if (p.toLowerCase() == this.password) {
+        if (p.toLowerCase() == this.p) {
             this.authenticated = true;
             return "";
         } else {
