@@ -5,15 +5,15 @@
         <a [routerLink]="'webcam'" (click)="sidenav.toggle()">Webcam</a>
         <a href="http://footeware.ca:9001" target="_blank">Recipes</a>
         <a href="mailto:CraigFoote@gmail.com" target="_blank">Email</a>
+        <div>v{{currentApplicationVersion}}</div>
     </mat-sidenav>
     <mat-sidenav-content>
         <div class="container">
             <h1>Footeware</h1>
             <button class="padded animate__animated animate__bounceInDown" mat-mini-fab color="primary"
-                (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+                (click)="sidenav.toggle()"><mat-icon>menu</mat-icon>
+            </button>
         </div>
-
         <router-outlet></router-outlet>
-
     </mat-sidenav-content>
 </mat-sidenav-container>

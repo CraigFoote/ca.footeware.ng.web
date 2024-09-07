@@ -14,7 +14,7 @@ mat-sidenav {
     left: 0;
     top: 0;
     width: 240px;
-    height: 330px;
+    height: 370px;
     text-align: center;
     padding-top: 30px;
     margin: 20px;
@@ -32,6 +32,11 @@ mat-sidenav a {
 
 mat-sidenav a:hover {
     color: blue;
+}
+
+mat-sidenav div {
+    margin-top: 15px;
+    color: aliceblue;
 }
 
 mat-sidenav-content {
