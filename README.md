@@ -2,7 +2,8 @@
 
 ## In VS Code
 
-1. `ng update`
+1. `ng update` (one time)
+1. change app version number in `package.json`
 1. `ng build`
 1. `ng serve`
 1. http://localhost:4200
