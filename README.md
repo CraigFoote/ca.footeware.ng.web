@@ -1,6 +1,9 @@
 # ca.footeware.ng.web
 
 <style>
+    * {
+        font-size: 20px;
+    }
     code {
         background-color: transparent;
         color: #ff9154
@@ -10,6 +13,7 @@
 ## Preparation
 
 1. `ng update`
+1. `npm install`
 
 ## Development in VS Code
 
