@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ImageService {
 
-  private host: string = 'http://localhost:8000/galleries';
+  private host: string = 'https://footeware.ca:8000/galleries';
 
   constructor(private http: HttpClient) { }
 
