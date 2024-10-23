@@ -9,15 +9,11 @@ ul {
     margin: 0;
 }
 
-li {
+a {
     font-family: "decker";
     letter-spacing: 1px;
     font-size: 2.5em;
     line-height: 1.5em;
-    list-style-image: url(../../assets/aperture-open.svg);
-}
-
-a {
     padding: 10px;
     color: black;
     border: 1px solid transparent;
@@ -29,4 +25,12 @@ a:hover {
 
 .selected {
     list-style-image: url(../../assets/aperture-closed.svg);
+}
+
+.padded-right {
+    padding-right: 10px;
+}
+
+.padded-left {
+    padding-left: 10px;
 }

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./webcam.component.css']
 })
 export class WebcamComponent {
-  wcsource: string = "https://foote:bogie97@footeware.ca:8081/MJPEG.CGI?.mjpeg";
+  wcsource: string = "https://footeware.ca:8081";
 }

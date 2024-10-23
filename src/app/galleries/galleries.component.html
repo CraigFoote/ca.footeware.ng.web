@@ -3,24 +3,42 @@
         <h1>Galleries</h1>
     </div>
     <div *ngIf="!loadingGalleries" class="container">
-        <ul class="animate__animated animate__fadeIn">
-            <li *ngFor="let gallery of galleries" [ngClass]="galleryName == gallery.name ? 'selected' : ''">
-                <a *ngIf="!gallery.secret" [routerLink]="'/galleries/' + gallery.name">{{gallery.name}}</a>
-                <a *ngIf="gallery.secret && !authService.authenticated"
-                    [routerLink]="'/login/' + gallery.name">{{gallery.name}}</a>
-                <a *ngIf="gallery.secret && authService.authenticated"
-                    [routerLink]="'/galleries/' + gallery.name">{{gallery.name}}</a>
-                <img *ngIf="gallery.secret && !authService.authenticated" src="../../assets/lock-closed.svg"
-                    alt="(locked)" />
-                <img *ngIf="gallery.secret && authService.authenticated" src="../../assets/lock-open.svg"
-                    alt="(open)" />
-            </li>
-        </ul>
+        <div *ngFor="let gallery of galleries" class="animate__animated animate__fadeIn" style="text-align: left;">
+
+            <!-- gallery is secret and we are NOT authenticated -->
+            <a *ngIf="gallery.secret && !authService.authenticated" [routerLink]="'/login/' + gallery.name">
+                <img *ngIf="currentGalleryName == gallery.name" src="../../assets/aperture-closed.svg"
+                    alt="{gallery.name}" class="padded-right" />
+                <img *ngIf="currentGalleryName != gallery.name" src="../../assets/aperture-open.svg" alt="{gallery.name}"
+                    class="padded-right" />
+                <span>{{gallery.name}}</span>
+                <img src="../../assets/lock-closed.svg" alt="(locked)" class="padded-left" />
+            </a>
+
+            <!-- gallery is secret and we are authenticated -->
+            <a *ngIf="gallery.secret && authService.authenticated" [routerLink]="'/galleries/' + gallery.name">
+                <img *ngIf="currentGalleryName == gallery.name" src="../../assets/aperture-closed.svg"
+                    alt="{gallery.name}" class="padded-right" />
+                <img *ngIf="currentGalleryName != gallery.name" src="../../assets/aperture-open.svg" alt="{gallery.name}"
+                    class="padded-right" />
+                <span>{{gallery.name}}</span>
+                <img src="../../assets/lock-open.svg" alt="(open)" class="padded-left" />
+            </a>
+
+            <!-- gallery is not secret -->
+            <a *ngIf="!gallery.secret" [routerLink]="'/galleries/' + gallery.name">
+                <img *ngIf="currentGalleryName == gallery.name" src="../../assets/aperture-closed.svg"
+                    alt="{gallery.name}" class="padded-right" />
+                <img *ngIf="currentGalleryName != gallery.name" src="../../assets/aperture-open.svg"
+                    alt="{gallery.name}" class="padded-right" />
+                <span>{{gallery.name}}</span>
+             </a>
+        </div>
     </div>
     <img *ngIf="loadingGalleries || loadingGallery" src="../../assets/loading.gif" alt="loading..." />
-    <div *ngIf="!loadingGallery" class="container" style="margin: 25px;">
+    <div *ngIf="!loadingGallery" class="container animate__animated animate__fadeIn" style="margin: 25px;">
         <div *ngFor="let tn of thumbnails" style="display: inline-block; margin: 10px;">
-            <a [href]="'https://footeware.ca:8000/galleries/' + galleryName + '/' + tn.filename" type="image/webp"
+            <a [href]="'https://footeware.ca:8000/galleries/' + currentGalleryName + '/' + tn.filename" type="image/webp"
                 data-fancybox="gallery">
                 <img [src]="'data:image/webp;charset=utf-8;base64,' + tn.thumb" [alt]="tn.filename"
                     [title]="tn.filename" />
