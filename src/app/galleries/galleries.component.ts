@@ -16,7 +16,7 @@ export class GalleriesComponent implements OnInit, OnDestroy {
   loadingGalleries: boolean = false;
   loadingGallery: boolean = false;
   private sub: any;
-  galleryName!: string;
+  currentGalleryName!: string;
   thumbnails!: Thumbnail[];
 
   constructor(private imageService: ImageService,
@@ -52,11 +52,11 @@ export class GalleriesComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe(params => {
       if (params['gallery-name'] != undefined) {
         this.loadingGallery = true;
-        this.galleryName = params["gallery-name"];
+        this.currentGalleryName = params["gallery-name"];
         if (this.galleryIsSecret() && !this.authService.authenticated) {
           this.router.navigate(["/login?${galleryName}"]);
         }
-        this.imageService.getGallery(this.galleryName).subscribe({
+        this.imageService.getGallery(this.currentGalleryName).subscribe({
           next: data => {
             this.thumbnails = data;
             this.loadingGallery = false;
@@ -74,7 +74,7 @@ export class GalleriesComponent implements OnInit, OnDestroy {
   galleryIsSecret(): boolean {
     let secret = false;
     this.galleries.forEach(gallery => {
-      if (this.galleryName == gallery.name) {
+      if (this.currentGalleryName == gallery.name) {
         secret = gallery.secret;
       }
     });

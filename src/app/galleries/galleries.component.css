@@ -3,21 +3,11 @@ h1 {
     font-size: 3em;
 }
 
-ul {
-    text-align: left;
-    padding-right: 30px;
-    margin: 0;
-}
-
-li {
+a {
     font-family: "decker";
     letter-spacing: 1px;
     font-size: 2.5em;
     line-height: 1.5em;
-    list-style-image: url(../../assets/aperture-open.svg);
-}
-
-a {
     padding: 10px;
     color: black;
     border: 1px solid transparent;
@@ -27,6 +17,14 @@ a:hover {
     color: blue;
 }
 
-.selected {
-    list-style-image: url(../../assets/aperture-closed.svg);
+.padded-right {
+    padding-right: 10px;
+}
+
+.padded-left {
+    padding-left: 10px;
+}
+
+.align-left {
+    text-align: left;
 }
