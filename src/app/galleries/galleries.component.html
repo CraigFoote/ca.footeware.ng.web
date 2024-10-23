@@ -3,7 +3,7 @@
         <h1>Galleries</h1>
     </div>
     <div *ngIf="!loadingGalleries" class="container">
-        <div *ngFor="let gallery of galleries" class="animate__animated animate__fadeIn" style="text-align: left;">
+        <div *ngFor="let gallery of galleries" class="align-left animate__animated animate__fadeIn">
 
             <!-- gallery is secret and we are NOT authenticated -->
             <a *ngIf="gallery.secret && !authService.authenticated" [routerLink]="'/login/' + gallery.name">
