@@ -18,8 +18,10 @@ body {
 
 body {
     margin: 0;
-    /* background-image: url(assets/DSC_0074.webp); */
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #2e3440;
+    background-position: center;
 }
 
 .center {

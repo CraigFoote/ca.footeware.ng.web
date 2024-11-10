@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ImageService {
 
-  private host: string = 'https://localhost:8000/galleries';
+  private host: string = 'https://footeware.ca:8000/galleries';
 
   constructor(private http: HttpClient) { }
 
@@ -23,6 +23,11 @@ export class ImageService {
 
   getImage(gallery: string, filename: string): Observable<any> {
     const headers = { 'Access-Control-Allow-Origin': '*' };
-    return this.http.get<any>(this.host + '/' + gallery + "/" + filename, { headers });
+    return this.http.get<any>(this.host + '/' + gallery + '/' + filename, { headers });
+  }
+
+  getRandomImage(): Observable<any> {
+    const headers = { 'Access-Control-Allow-Origin': '*' };
+    return this.http.get<any>(this.host + '/Artsy-Fartsy/random', { headers });
   }
 }
