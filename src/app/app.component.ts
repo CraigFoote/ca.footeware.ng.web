@@ -15,6 +15,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.wallpaper = this.imageService.getRandomImage();
-    this.renderer.setStyle(document.body, 'background-image', "url('https://localhost:8000/galleries/Artsy-Fartsy/random')");
+    this.renderer.setStyle(document.body, 'background-image', "url('https://footeware.ca:8000/galleries/Artsy-Fartsy/random')");
   }
 }
