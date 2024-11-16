@@ -41,7 +41,7 @@
             <a [href]="'https://footeware.ca:8000/galleries/' + currentGalleryName + '/' + tn.filename" type="image/webp"
                 data-fancybox="gallery">
                 <img [src]="'data:image/webp;charset=utf-8;base64,' + tn.thumb" [alt]="tn.filename"
-                    [title]="tn.filename" />
+                    [title]="tn.exif" />
             </a>
         </div>
     </div>
