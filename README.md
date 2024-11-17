@@ -25,7 +25,7 @@
 1. <http://localhost:4200> - see pictures
 1. `docker build -t ng.web .`
 1. `docker run -d --name ng.web -p 443:443 -t ng.web`
-1. <http://localhost> - see pictures
+1. <https://localhost> - see pictures
 
 ## Release
 
