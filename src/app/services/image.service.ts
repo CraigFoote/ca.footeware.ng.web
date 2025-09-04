@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ImageService {
 
-  private host: string = 'https://footeware.ca:8000/galleries';
+  private readonly host: string = 'https://footeware.ca:8000/galleries';
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
   getAllGalleries(): Observable<any> {
     const headers = { 'Access-Control-Allow-Origin': '*' };

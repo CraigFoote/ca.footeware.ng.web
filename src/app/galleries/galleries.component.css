@@ -1,10 +1,10 @@
 h1 {
-    font-family: "choice";
+    font-family: "choice", sans-serif;
     font-size: 3em;
 }
 
 a {
-    font-family: "decker";
+    font-family: "decker", sans-serif;
     letter-spacing: 1px;
     font-size: 2.5em;
     line-height: 1.5em;
@@ -28,4 +28,3 @@ a:hover {
 .align-left {
     text-align: left;
 }
-

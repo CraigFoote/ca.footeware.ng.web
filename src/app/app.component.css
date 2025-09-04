@@ -23,7 +23,7 @@ mat-sidenav {
 
 mat-sidenav a {
     font-size: 3em;
-    font-family: "choice";
+    font-family: "choice", sans-serif;
     color: black;
     display: block;
     padding: 20px 0 20px 0;
@@ -44,6 +44,6 @@ mat-sidenav-content {
 }
 
 h1 {
-    font-family: "choice";
+    font-family: "choice", sans-serif;
     font-size: 3.5em;
 }

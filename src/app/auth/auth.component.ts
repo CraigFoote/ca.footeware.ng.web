@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -15,9 +14,9 @@ export class AuthComponent implements OnInit, OnDestroy {
   private forwardTo!: string;
   hide: boolean = true;
 
-  constructor(private authService: AuthService,
-    private route: ActivatedRoute,
-    private router: Router) { }
+  constructor(private readonly authService: AuthService,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router) { }
 
   ngOnInit(): void {
     this.subscribeToGallerySelection();

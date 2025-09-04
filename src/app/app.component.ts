@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   currentApplicationVersion = environment.appVersion;
   wallpaper!: any;
 
-  constructor(private imageService: ImageService, private renderer: Renderer2) {}
+  constructor(private readonly imageService: ImageService, private readonly renderer: Renderer2) { }
 
   ngOnInit(): void {
     this.wallpaper = this.imageService.getRandomImage();
