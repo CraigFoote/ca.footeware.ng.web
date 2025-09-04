@@ -3,9 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-auth',
-  templateUrl: './auth.component.html',
-  styleUrls: ['./auth.component.css']
+    selector: 'app-auth',
+    templateUrl: './auth.component.html',
+    styleUrls: ['./auth.component.css'],
+    standalone: false
 })
 export class AuthComponent implements OnInit, OnDestroy {
   p: string = "";

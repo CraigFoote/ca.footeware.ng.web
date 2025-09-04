@@ -6,9 +6,10 @@ import { AuthService } from '../services/auth.service';
 import { ImageService } from "../services/image.service";
 
 @Component({
-  selector: 'app-galleries',
-  templateUrl: './galleries.component.html',
-  styleUrls: ['./galleries.component.css']
+    selector: 'app-galleries',
+    templateUrl: './galleries.component.html',
+    styleUrls: ['./galleries.component.css'],
+    standalone: false
 })
 export class GalleriesComponent implements OnInit, OnDestroy {
 
