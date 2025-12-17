@@ -8,7 +8,7 @@ mat-sidenav-container {
 }
 
 mat-sidenav {
-    background-color: rgba(240, 248, 255, 0.5);
+    background-color: #2A333ACC;
     box-shadow: none !important;
     position: absolute;
     left: 0;
@@ -24,14 +24,14 @@ mat-sidenav {
 mat-sidenav a {
     font-size: 3em;
     font-family: "choice", sans-serif;
-    color: black;
+    color: whitesmoke;
     display: block;
     padding: 20px 0 20px 0;
     text-decoration: none;
 }
 
 mat-sidenav a:hover {
-    color: blue;
+    color: #7ebeef;
 }
 
 mat-sidenav div {

@@ -31,14 +31,20 @@ body {
 }
 
 .container {
-    background-color: rgba(240, 248, 255, 0.8);
+    background-color: #2A333ACC;
     margin: 10px auto 10px auto;
     width: fit-content;
     box-sizing: border-box;
     padding: 20px;
     border-radius: 10px;
+    color: whitesmoke;
 }
 
 a {
     text-decoration: none;
+    color: #7ebeef;
+}
+
+a:visited {
+    color: #9774B7FF;
 }

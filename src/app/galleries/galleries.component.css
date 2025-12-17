@@ -9,12 +9,12 @@ a {
     font-size: 2.5em;
     line-height: 1.5em;
     padding: 10px;
-    color: black;
+    color: whitesmoke;
     border: 1px solid transparent;
 }
 
 a:hover {
-    color: blue;
+    color: #7ebeef;
 }
 
 .padded-right {

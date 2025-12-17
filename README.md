@@ -1,15 +1,5 @@
 # ca.footeware.ng.web
 
-<style>
-    * {
-        font-size: 20px;
-    }
-    code {
-        background-color: transparent;
-        color: #ff9154
-    }
-</style>
-
 ## Preparation
 
 1. `ng update`
