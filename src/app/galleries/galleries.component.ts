@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Gallery } from '../models/gallery';
 import { Thumbnail } from '../models/thumbnail';
@@ -9,6 +9,7 @@ import { ImageService } from "../services/image.service";
     selector: 'app-galleries',
     templateUrl: './galleries.component.html',
     styleUrls: ['./galleries.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class GalleriesComponent implements OnInit, OnDestroy {

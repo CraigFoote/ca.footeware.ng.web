@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, ChangeDetectionStrategy } from '@angular/core';
 import { environment } from '../environments/environment';
 import { ImageService } from './services/image.service';
 
@@ -6,6 +6,7 @@ import { ImageService } from './services/image.service';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AppComponent implements OnInit {

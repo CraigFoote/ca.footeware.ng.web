@@ -1,4 +1,4 @@
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,5 +30,5 @@ import { WebcamComponent } from './webcam/webcam.component';
         MatButtonModule,
         MatFormFieldModule,
         FormsModule,
-        MatInputModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        MatInputModule], providers: [provideHttpClient(withXhr(), withInterceptorsFromDi())] })
 export class AppModule { }

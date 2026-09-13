@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -6,6 +6,7 @@ import { AuthService } from '../services/auth.service';
     selector: 'app-auth',
     templateUrl: './auth.component.html',
     styleUrls: ['./auth.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AuthComponent implements OnInit, OnDestroy {
