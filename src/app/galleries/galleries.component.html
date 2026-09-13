@@ -55,8 +55,8 @@
   <div class="container animate__animated animate__fadeIn" style="margin: 25px;">
     @for (tn of thumbnails; track $index) {
     <div style="display: inline-block; margin: 10px;">
-      <a [href]="'https://footeware.ca:8000/galleries/' + currentGalleryName + '/' + tn.filename" type="image/webp"
-        data-fancybox="gallery">
+      <a data-fancybox="gallery"
+        [href]="'https://footeware.ca:8000/galleries/' + currentGalleryName + '/' + tn.filename" type="image/webp">
         <img [src]="'data:image/webp;charset=utf-8;base64,' + tn.thumb" [alt]="tn.filename" [title]="tn.exif" />
       </a>
     </div>
