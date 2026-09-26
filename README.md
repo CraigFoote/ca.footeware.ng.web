@@ -2,8 +2,8 @@
 
 ## Preparation
 
-1. `ng update`
 1. `npm install`
+1. `ng update`
 
 ## Development in VS Code
 
