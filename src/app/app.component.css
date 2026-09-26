@@ -1,49 +1,50 @@
 mat-sidenav-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
 }
 
 mat-sidenav {
-    background-color: #2A333ACC;
-    box-shadow: none !important;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 240px;
-    height: 465px;
-    text-align: center;
-    padding-top: 30px;
-    margin: 20px;
-    border-radius: 5px;
+  background-color: #506370b9;
+  box-shadow: none !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 465px;
+  text-align: center;
+  padding-top: 30px;
+  margin: 20px;
+  border-radius: 5px;
+  backdrop-filter: blur(3px);
 }
 
 mat-sidenav a {
-    font-size: 3em;
-    font-family: "choice", sans-serif;
-    color: whitesmoke;
-    display: block;
-    padding: 20px 0 20px 0;
-    text-decoration: none;
+  font-size: 3em;
+  font-family: "choice", sans-serif;
+  color: whitesmoke;
+  display: block;
+  padding: 20px 0 20px 0;
+  text-decoration: none;
 }
 
 mat-sidenav a:hover {
-    color: #7ebeef;
+  color: #7ebeef;
 }
 
 mat-sidenav div {
-    margin-top: 15px;
-    color: aliceblue;
+  margin-top: 15px;
+  color: aliceblue;
 }
 
 mat-sidenav-content {
-    text-align: center;
+  text-align: center;
 }
 
 h1 {
-    font-family: "choice", sans-serif;
-    font-size: 3.5em;
+  font-family: "choice", sans-serif;
+  font-size: 3.5em;
 }

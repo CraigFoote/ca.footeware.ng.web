@@ -31,14 +31,14 @@ body {
 }
 
 .container {
-  background-color: #3e4c56cc;
+  background-color: #506370b9;
   margin: 10px auto 10px auto;
   width: fit-content;
   box-sizing: border-box;
   padding: 20px;
   border-radius: 10px;
   color: whitesmoke;
-  filter: blur(1px);
+  backdrop-filter: blur(3px);
 }
 
 a {
