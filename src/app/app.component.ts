@@ -3,20 +3,20 @@ import { environment } from '../environments/environment';
 import { ImageService } from './services/image.service';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  standalone: false
 })
 export class AppComponent implements OnInit {
   currentApplicationVersion = environment.appVersion;
   wallpaper!: any;
 
-  constructor(private readonly imageService: ImageService, private readonly renderer: Renderer2) { }
+  constructor(private readonly imageService: ImageService, private readonly renderer: Renderer2) {}
 
   ngOnInit(): void {
     this.wallpaper = this.imageService.getRandomImage();
-    this.renderer.setStyle(document.body, 'background-image', "url('https://footeware.ca:8000/galleries/Artsy-Fartsy/random')");
+    this.renderer.setStyle(document.body, 'background-image', this.wallpaper);
   }
 }
