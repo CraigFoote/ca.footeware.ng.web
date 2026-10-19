@@ -25,9 +25,4 @@ export class ImageService {
     const headers = { 'Access-Control-Allow-Origin': '*' };
     return this.http.get<any>(this.host + '/' + gallery + '/' + filename, { headers });
   }
-
-  getRandomImage(): Observable<any> {
-    const headers = { 'Access-Control-Allow-Origin': '*' };
-    return this.http.get<any>(this.host + '/Artsy-Fartsy/random', { headers });
-  }
 }
