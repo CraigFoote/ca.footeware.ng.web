@@ -3,26 +3,26 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ImageService {
 
-  private readonly host: string = 'https://footeware.ca:8000/galleries';
+    private readonly host: string = 'https://footeware.ca:8000/galleries';
 
-  constructor(private readonly http: HttpClient) { }
+    constructor(private readonly http: HttpClient) {}
 
-  getAllGalleries(): Observable<any> {
-    const headers = { 'Access-Control-Allow-Origin': '*' };
-    return this.http.get<any>(this.host, { headers });
-  }
+    getAllGalleries(): Observable<any> {
+        const headers = { 'Access-Control-Allow-Origin': '*' };
+        return this.http.get<any>(this.host, { headers });
+    }
 
-  getGallery(gallery: string): Observable<any> {
-    const headers = { 'Access-Control-Allow-Origin': '*' };
-    return this.http.get<any>(this.host + '/' + gallery, { headers });
-  }
+    getGallery(gallery: string): Observable<any> {
+        const headers = { 'Access-Control-Allow-Origin': '*' };
+        return this.http.get<any>(this.host + '/' + gallery, { headers });
+    }
 
-  getImage(gallery: string, filename: string): Observable<any> {
-    const headers = { 'Access-Control-Allow-Origin': '*' };
-    return this.http.get<any>(this.host + '/' + gallery + '/' + filename, { headers });
-  }
+    getImage(gallery: string, filename: string): Observable<any> {
+        const headers = { 'Access-Control-Allow-Origin': '*' };
+        return this.http.get<any>(this.host + '/' + gallery + '/' + filename, { headers });
+    }
 }

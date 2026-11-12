@@ -1,66 +1,67 @@
 <div class="center">
-  <div class="container">
-    <h1>Galleries</h1>
-  </div>
-  @if (!loadingGalleries) {
-  <div class="container">
-    @for (gallery of galleries; track gallery) {
-    <div class="align-left animate__animated animate__fadeIn">
-      <!-- gallery is secret and we are NOT authenticated -->
-      @if (gallery.secret && !authService.authenticated) {
-      <a [routerLink]="'/login/' + gallery.name">
-        @if (currentGalleryName == gallery.name) {
-        <img src="../../assets/aperture-closed2.svg" alt="{gallery.name}" class="padded-right" />
+    <div class="container">
+        <h1>Galleries</h1>
+    </div>
+    @if (!loadingGalleries) {
+    <div class="container">
+        @for (gallery of galleries; track gallery) {
+        <div class="align-left animate__animated animate__fadeIn">
+            <!-- gallery is secret and we are NOT authenticated -->
+            @if (gallery.secret && !authService.authenticated) {
+            <a [routerLink]="'/login/' + gallery.name">
+                @if (currentGalleryName == gallery.name) {
+                <img src="../../assets/aperture-closed2.svg" alt="{gallery.name}" class="padded-right" />
+                }
+                @if (currentGalleryName != gallery.name) {
+                <img src="../../assets/aperture-open2.svg" alt="{gallery.name}" class="padded-right" />
+                }
+                <span>{{gallery.name}}</span>
+                <img src="../../assets/lock-closed2.svg" alt="(locked)" class="padded-left" />
+            </a>
+            }
+            <!-- gallery is secret and we are authenticated -->
+            @if (gallery.secret && authService.authenticated) {
+            <a [routerLink]="'/galleries/' + gallery.name">
+                @if (currentGalleryName == gallery.name) {
+                <img src="../../assets/aperture-closed2.svg" alt="{gallery.name}" class="padded-right" />
+                }
+                @if (currentGalleryName != gallery.name) {
+                <img src="../../assets/aperture-open2.svg" alt="{gallery.name}" class="padded-right" />
+                }
+                <span>{{gallery.name}}</span>
+                <img src="../../assets/lock-open2.svg" alt="(open)" class="padded-left" />
+            </a>
+            }
+            <!-- gallery is not secret -->
+            @if (!gallery.secret) {
+            <a [routerLink]="'/galleries/' + gallery.name">
+                @if (currentGalleryName == gallery.name) {
+                <img src="../../assets/aperture-closed2.svg" alt="{gallery.name}" class="padded-right" />
+                }
+                @if (currentGalleryName != gallery.name) {
+                <img src="../../assets/aperture-open2.svg" alt="{gallery.name}" class="padded-right" />
+                }
+                <span>{{gallery.name}}</span>
+            </a>
+            }
+        </div>
         }
-        @if (currentGalleryName != gallery.name) {
-        <img src="../../assets/aperture-open2.svg" alt="{gallery.name}" class="padded-right" />
-        }
-        <span>{{gallery.name}}</span>
-        <img src="../../assets/lock-closed2.svg" alt="(locked)" class="padded-left" />
-      </a>
-      }
-      <!-- gallery is secret and we are authenticated -->
-      @if (gallery.secret && authService.authenticated) {
-      <a [routerLink]="'/galleries/' + gallery.name">
-        @if (currentGalleryName == gallery.name) {
-        <img src="../../assets/aperture-closed2.svg" alt="{gallery.name}" class="padded-right" />
-        }
-        @if (currentGalleryName != gallery.name) {
-        <img src="../../assets/aperture-open2.svg" alt="{gallery.name}" class="padded-right" />
-        }
-        <span>{{gallery.name}}</span>
-        <img src="../../assets/lock-open2.svg" alt="(open)" class="padded-left" />
-      </a>
-      }
-      <!-- gallery is not secret -->
-      @if (!gallery.secret) {
-      <a [routerLink]="'/galleries/' + gallery.name">
-        @if (currentGalleryName == gallery.name) {
-        <img src="../../assets/aperture-closed2.svg" alt="{gallery.name}" class="padded-right" />
-        }
-        @if (currentGalleryName != gallery.name) {
-        <img src="../../assets/aperture-open2.svg" alt="{gallery.name}" class="padded-right" />
-        }
-        <span>{{gallery.name}}</span>
-      </a>
-      }
     </div>
     }
-  </div>
-  }
-  @if (loadingGalleries || loadingGallery) {
-  <img src="../../assets/loading.gif" alt="loading..." />
-  }
-  @if (currentGalleryName && !loadingGallery) {
-  <div class="container animate__animated animate__fadeIn" style="margin: 25px;">
-    @for (tn of thumbnails; track $index) {
-    <div style="display: inline-block; margin: 10px;">
-      <a data-fancybox="gallery"
-        [href]="'https://footeware.ca:8000/galleries/' + currentGalleryName + '/' + tn.filename" type="image/webp">
-        <img [src]="'data:image/webp;charset=utf-8;base64,' + tn.thumb" [alt]="tn.filename" [title]="tn.exif" />
-      </a>
+    @if (loadingGalleries || loadingGallery) {
+    <img src="../../assets/loading.gif" alt="loading..." />
+    }
+    @if (currentGalleryName && !loadingGallery) {
+    <div class="container animate__animated animate__fadeIn" style="margin: 25px;">
+        @for (tn of thumbnails; track $index) {
+        <div style="display: inline-block; margin: 10px;">
+            <a data-fancybox="gallery"
+                [href]="'https://footeware.ca:8000/galleries/' + currentGalleryName + '/' + tn.filename"
+                type="image/webp">
+                <img [src]="'data:image/webp;charset=utf-8;base64,' + tn.thumb" [alt]="tn.filename" [title]="tn.exif" />
+            </a>
+        </div>
+        }
     </div>
     }
-  </div>
-  }
 </div>

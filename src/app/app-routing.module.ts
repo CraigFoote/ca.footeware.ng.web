@@ -6,15 +6,15 @@ import { GalleriesComponent } from './galleries/galleries.component';
 import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
-  { path: "gear", component: GearComponent },
-  { path: "webcam", component: WebcamComponent },
-  { path: "galleries", component: GalleriesComponent },
-  { path: "galleries/:gallery-name", component: GalleriesComponent },
-  { path: "login/:gallery-name", component: AuthComponent },
+    { path: "gear", component: GearComponent },
+    { path: "webcam", component: WebcamComponent },
+    { path: "galleries", component: GalleriesComponent },
+    { path: "galleries/:gallery-name", component: GalleriesComponent },
+    { path: "login/:gallery-name", component: AuthComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

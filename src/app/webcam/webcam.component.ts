@@ -8,5 +8,5 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
     standalone: false
 })
 export class WebcamComponent {
-  wcsource: string = "https://footeware.ca:8081";
+    wcsource: string = "https://footeware.ca:8081";
 }
